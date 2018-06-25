@@ -1,4 +1,4 @@
 {
-  "host": "tokenscraper-js-app.feathersjs.com",
+  "host": "localhost",
   "port": "PORT"
 }
