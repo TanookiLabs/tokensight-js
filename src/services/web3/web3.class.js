@@ -19,7 +19,10 @@ class Service {
   }
 
   setup(app) {
-    this.create({ provider: new Web3.providers.WebsocketProvider('wss://mainnet.infura.io/_ws') })
+    // this.create({ provider: new Web3.providers.WebsocketProvider('wss://mainnet.infura.io/_ws') })
+    this.create({
+      provider: new Web3.providers.WebsocketProvider('wss://rinkeby.tanookilabs.com:8546')
+    })
   }
 
   setupProvider(provider) {

@@ -57,7 +57,8 @@ app.service('web3').on('connected', async web3 => {
     options: {
       fromBlock: `0x${lastBlock.toString(16)}`,
       toBlock: 'latest'
-    }
+    },
+    network: 'rinkeby'
   })
 })
 
