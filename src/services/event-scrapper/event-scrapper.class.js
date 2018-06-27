@@ -6,7 +6,7 @@ class Service {
   }
 
   async create(data, params) {
-    const { web3, name, topic, options } = data
+    const { web3, name, topic, options, network } = data
     console.log(`Starting event scrapper for: ${name}`)
 
     const subscriptionOptions = { ...options, topics: [topic] }
@@ -18,7 +18,7 @@ class Service {
         throw error
       }
       console.log(result)
-      this.app.service('events').create({ name: name, topic: topic, data: result })
+      this.app.service('events').create({ name: name, topic: topic, data: result, network: network })
     })
 
     subscription.on('error', error => {

@@ -17,11 +17,17 @@ module.exports = function(options = {}) {
       throw new BadRequest('Event topic is invalid')
     }
 
+    if (!data.network) throw new BadRequest('Event network is required')
+    if (typeof data.network !== 'string' || data.topic.trim() === '') {
+      throw new BadRequest('Event network is invalid')
+    }
+
     context.data = {
       web3: data.web3,
       name: data.name,
       topic: data.topic,
-      options: parseOptions(data.options)
+      options: parseOptions(data.options),
+      network: data.network
     }
 
     return context
